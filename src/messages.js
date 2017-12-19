@@ -61,7 +61,7 @@ var errors = {
   E043: "Too many errors.",
   E044: null,
   E045: "Invalid for each loop.",
-  E046: "A yield statement shall be within a generator function (with syntax: `function*`)",
+  E046: "Yield expressions may only occur within generator functions.",
   E047: null,
   E048: "{a} declaration not directly within block.",
   E049: "A {a} cannot be named '{b}'.",
@@ -103,7 +103,7 @@ var warnings = {
   W021: "Reassignment of '{a}', which is is a {b}. " +
     "Use 'var' or 'let' to declare bindings that may change.",
   W022: "Do not assign to the exception parameter.",
-  W023: "Expected an identifier in an assignment and instead saw a function invocation.",
+  W023: null,
   W024: "Expected an identifier and instead saw '{a}' (a reserved word).",
   W025: "Missing name in function declaration.",
   W026: "Inner functions should be listed at the top of the outer function.",
@@ -167,7 +167,8 @@ var warnings = {
   W082: "Function declarations should not be placed in blocks. " +
     "Use a function expression or move the statement to the top of " +
     "the outer function.",
-  W083: "Don't make functions within a loop.",
+  W083: "Functions declared within loops referencing an outer scoped " +
+    "variable may lead to confusing semantics. ({a})",
   W084: "Expected a conditional expression and instead saw an assignment.",
   W085: "Don't use 'with'.",
   W086: "Expected a 'break' statement before '{a}'.",
@@ -207,7 +208,7 @@ var warnings = {
   W121: "Extending prototype of native object: '{a}'.",
   W122: "Invalid typeof value '{a}'",
   W123: "'{a}' is already defined in outer scope.",
-  W124: "A generator function shall contain a yield statement.",
+  W124: "A generator function should contain at least one yield expression.",
   W125: "This line contains non-breaking spaces: http://jshint.com/docs/options/#nonbsp",
   W126: "Unnecessary grouping operator.",
   W127: "Unexpected use of a comma operator.",
@@ -221,10 +222,12 @@ var warnings = {
   W134: "The '{a}' option is only available when linting ECMAScript {b} code.",
   W135: "{a} may not be supported by non-browser environments.",
   W136: "'{a}' must be in function scope.",
-  W137: "Empty destructuring.",
+  W137: "Empty destructuring: this is unnecessary and can be removed.",
   W138: "Regular parameters should not come after default parameters.",
   W139: "Function expressions should not be used as the second operand to instanceof.",
-  W140: "Missing comma."
+  W140: "Missing comma.",
+  W141: "Empty {a}: this is unnecessary and can be removed.",
+  W142: "Empty {a}: consider replacing with `import '{b}';`."
 };
 
 var info = {

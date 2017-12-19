@@ -5,8 +5,8 @@
 // Identifiers provided by the ECMAScript standard.
 
 exports.reservedVars = {
-  arguments : false,
-  NaN       : false
+  NaN       : false,
+  undefined : false
 };
 
 exports.ecmaIdentifiers = {
@@ -23,6 +23,7 @@ exports.ecmaIdentifiers = {
     EvalError          : false,
     Function           : false,
     hasOwnProperty     : false,
+    Infinity           : false,
     isFinite           : false,
     isNaN              : false,
     Math               : false,
@@ -103,6 +104,7 @@ exports.browser = {
   focus                : false,
   frames               : false,
   getComputedStyle     : false,
+  Headers              : false,
   HTMLElement          : false,
   HTMLAnchorElement    : false,
   HTMLBaseElement      : false,
@@ -161,11 +163,13 @@ exports.browser = {
   HTMLVideoElement     : false,
   history              : false,
   Image                : false,
+  IntersectionObserver : false,
   Intl                 : false,
   length               : false,
   localStorage         : false,
   location             : false,
   matchMedia           : false,
+  MediaRecorder        : false,
   MessageChannel       : false,
   MessageEvent         : false,
   MessagePort          : false,
@@ -196,8 +200,10 @@ exports.browser = {
   Range                : false,
   requestAnimationFrame : false,
   removeEventListener  : false,
+  Request              : false,
   resizeBy             : false,
   resizeTo             : false,
+  Response             : false,
   screen               : false,
   scroll               : false,
   scrollBy             : false,
@@ -437,6 +443,7 @@ exports.couch = {
 exports.node = {
   __filename    : false,
   __dirname     : false,
+  arguments     : false,
   GLOBAL        : false,
   global        : false,
   module        : false,
@@ -499,6 +506,7 @@ exports.qunit = {
 };
 
 exports.rhino = {
+  arguments    : false,
   defineClass  : false,
   deserialize  : false,
   gc           : false,
@@ -734,5 +742,7 @@ exports.jasmine = {
   fail        : false,
   fdescribe   : false,
   fit         : false,
-  pending     : false
+  pending     : false,
+  // Jasmine 2.6
+  spyOnProperty: false
 };

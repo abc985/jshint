@@ -1,6 +1,6 @@
 {
   "name":     "jshint",
-  "version":  "2.9.4",
+  "version":  "2.9.5",
   "homepage": "http://jshint.com/",
   "description": "Static analysis tool for JavaScript",
 
@@ -26,7 +26,8 @@
   "scripts": {
     "browser-test-server": "node tests/helpers/browser/server",
     "build": "node bin/build",
-    "coverage": "istanbul -- cover ./node_modules/.bin/nodeunit tests/unit",
+    "coverage": "istanbul -- cover ./node_modules/nodeunit/bin/nodeunit tests/unit",
+    "coverage-report": "npm run coverage && istanbul report html",
     "data": "node scripts/generate-identifier-data",
     "fetch-test262": "git submodule init && git submodule update",
     "pretest": "node ./bin/jshint src && jscs src",
@@ -65,11 +66,14 @@
     "jscs":                           "1.11.x",
     "mock-stdin":                     "0.3.x",
     "nodeunit":                       "0.9.x",
-    "phantom":                        "~4.0.1",
-    "phantomjs-prebuilt":             "~2.1.7",
     "regenerate":                     "1.2.x",
     "sinon":                          "1.12.x",
     "unicode-6.3.0":                  "0.1.x"
+  },
+
+  "optionalDependencies": {
+    "phantom":                        "~4.0.1",
+    "phantomjs-prebuilt":             "~2.1.7"
   },
 
   "license": "(MIT AND JSON)",
